@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url(home.css);
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary-1 : #E0F2E9;/*rgb(224, 242, 233)*/
+    --color-primary-2 : #A6C3F2; /*rgb(166, 196, 242)*/
+    --color-primary-3 : #3B7BE3;/*rgb(59, 123, 227)*/
+    --color-primary-4 : #296FE0;/*rgb(41, 111, 224)*/
+    --color-primary-5 : #0A2247; /*rgb(10, 34, 71)*/
+    --color-primary-6 : #000000;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--color-primary-3);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+header{
+  width: 100%;
+  position: sticky;
+  top: 3dvh;
+  justify-content: center;
+  display: flex;
+  border-radius: 15dvb;
+}
+#navbar{
+  z-index: 999;
+  backdrop-filter: blur(4px);
+  justify-self: center;
+  background-color: rgb(166, 196, 242, .8);
+  box-shadow: 0px 5px 5px var(--color-primary-4);
+  width: 150dvh;
+  justify-content: space-between;
+  display: flex;
+  border-radius: 16px;
+  
+}
+#nav_list {
+  justify-self: center;
+  align-content: center;
+  gap: 50px;
+  padding-right: 5dvh;
+}
+#logo_icon{
+  width: 15dvh;
+  padding: 2dvh;
+  filter: brightness(0);
+}
+
+.btn{
+  border-radius: 100px;
+  padding: 4dvh;
+  color:var(--color-primary-6);
+  font-size: 20px;
+  transition: color 0.3s ease-in-out;
+  justify-content: center;
+}
+.btn:hover{
+  color: var(--color-primary-1);
+  transform: scale(1.1);
+}
+#btn-navbar{
+  background-color: var(--color-primary-6);
+  color: var(--color-primary-1);
+  border-radius: 100px;
+  padding: 15px 30px 15px 30px;
+  border-width: 10px;
+  border-color: transparent;
+}
+#btn-navbar:hover{
+  color: var(--color-primary-1);
+  transform: scale(1.1);
+}
