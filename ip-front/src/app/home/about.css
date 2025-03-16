@@ -1,0 +1,45 @@
+#about{
+    background: linear-gradient(var(--color-primary-3), var(--color-primary-5));
+}
+#about-div{
+    
+    display:flex;
+    flex-direction: column;
+    background-color: var(--color-primary-1);
+    border-radius: 20dvi 0 10dvi 0 ;
+    padding-bottom: 20dvh ;
+}
+#about h1{
+    align-self: center;
+    font-size: 10dvh;
+    padding-bottom: 5dvh;
+    color: var(--color-primary-5);
+}
+
+#about-grid{
+    align-content: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+#about-text{
+    width: 100dvh;
+    height: 70dvh;
+    align-content: center;
+    padding: 10dvh;
+    border-radius: 0dvh 20dvh 0dvh 20dvh;
+    background-color: var(--color-primary-3);
+    text-align: center;
+    color: var(--color-primary-1);
+    font-size: 3dvh;
+}
+#about-img{
+    background-color: var(--color-primary-5);
+    border-radius: 20dvh 0dvh 20dvh 0dvh;
+    padding: 7dvh 10dvh 0 10dvh ;
+    text-align: center;
+    color: var(--color-primary-1);
+    font-size: 4dvh;
+}
+#about-img img{
+    border-radius: 10dvh 10dvh 10vh 10dvh;
+}
