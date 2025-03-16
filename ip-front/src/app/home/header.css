@@ -58,3 +58,12 @@
         color: var(--color-primary-1);
         transform: scale(1.1);
     }
+
+    @media (max-width: 800px) {
+        .btn{
+            display: none;
+        }
+        #btn-navbar{
+            
+        }
+    }

@@ -10,6 +10,7 @@ import './header.css';
 import './home.css';
 
 export default function Home() {
+    
     const aboutSection = useRef<HTMLDivElement | null>(null);
     const catalogSection = useRef<HTMLDivElement | null>(null);
     const homeSection = useRef<HTMLDivElement | null>(null);

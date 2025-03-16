@@ -39,7 +39,7 @@
 
 #container div:hover {
     transform: scale(1.15);
-
+    cursor: pointer;
 }
 
 #container h3 {
@@ -60,8 +60,25 @@
     z-index: 2;
 }
 
-
 #container div:hover .description {
     transform: none; 
     box-shadow: none;
+}
+
+@media (max-width: 900px) {
+    #container {
+        overflow-x: auto; /* Permite rolagem horizontal */
+        scroll-snap-type: x mandatory; /* Alinha os itens ao rolar */
+        justify-content: flex-start; /* Alinha os itens à esquerda */
+        gap: 10px; /* Reduz o espaçamento entre os itens */
+        padding-bottom: 20px; /* Adiciona espaço para a barra de rolagem */
+    }
+
+    #container div {
+        scroll-snap-align: start; /* Alinha o item ao rolar */
+    }
+
+    #container div:hover {
+        transform: none; /* Remove o efeito de hover em dispositivos móveis */
+    }
 }
