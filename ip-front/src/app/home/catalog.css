@@ -39,7 +39,7 @@
 
 #container div:hover {
     transform: scale(1.15);
-    box-shadow: 0 2px 8px var(--color-primary-4);
+
 }
 
 #container h3 {

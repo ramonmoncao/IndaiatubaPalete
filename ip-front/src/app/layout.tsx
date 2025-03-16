@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Geist, Geist_Mono, Ubuntu } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,32 +46,30 @@ export default function RootLayout({
         {children}
         <footer id='footer'>
         <div id= "footer-div">
-          <div id="footer_items">
-              <span id="copyright">
-                  &copy 2024 Pallets Indaiatuba - Todos os direitos reservados
-              </span>
+          <div id="footer-items">
+              <div id="copyright">
+                  <Image src="/ipicon.png" alt="LogoIP" width={100} height={100} style={{ filter: 'brightness(1000%)' }}/>
+                  &copy; Indaiatuba Paletes 2025 - Todos os direitos reservados
+              </div>
               <ul id="footer_list">
                   <li>
-                      <a href="#home">Início</a>
+                      <a href="/home#home">•Início</a>
                   </li>
                   <li>
-                      <a href="#about">Sobre nós</a>
+                      <a href="/home#about">•Sobre nós</a>
                   </li>
                   <li>
-                      <a href="#catalog">Catálogo</a>
-                  </li>
-                  <li>
-                      <a href="#contact">Contate-nos</a>
+                      <a href="/home#catalog">•Catálogo</a>
                   </li>
               </ul>
               <div id="footer-contents">
                   <h2>Indaiatuba palete</h2>
                   <h1>endereço aqui</h1>
-                  <br />
+
                   <h1><strong>Fale conosco:</strong> +55 (19) 991328457 </h1>
-                  <br />
+
                   <h1><strong>Whatsapp:</strong> +55 (19) 995000074</h1>
-                  <br />
+
                   <h1>comercial@robertopaletes.com.br</h1>
               </div>
             </div>

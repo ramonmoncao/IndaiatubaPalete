@@ -32,6 +32,13 @@ html{
 /*footer*/
 
 #footer-div{
-  background-color: var(--color-primary-1);
-
+  z-index: 10;
+  font-size: 14px;
+  padding-top: 5dvh;
+  background-color: var(--color-primary-5);
+  color: var(--color-primary-1);
+}
+#footer-items{
+  display: flex;
+  justify-content: space-between;
 }
