@@ -17,8 +17,10 @@ export default function Home() {
     const [activeSection, setActiveSection] = useState('home');
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-    const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>, sectionName: string) => {
-        sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement | null>, sectionName: string) => {
+        if (sectionRef.current) {
+            sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
         setActiveSection(sectionName);
     };
 
