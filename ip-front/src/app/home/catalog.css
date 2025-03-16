@@ -1,14 +1,67 @@
-#catalog{
+#catalog {
     background: linear-gradient(var(--color-primary-1), var(--color-primary-4));
+    z-index: 1;
 }
-#catalog-div{
+
+#catalog-div {
     background-color: var(--color-primary-5);
     border-radius: 0 0 0 10dvw;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding-bottom: 20dvh;
+}
+
+#catalog h1 {
+    align-self: center;
+    font-size: 10dvh;
+    padding-bottom: 5dvh;
+    color: var(--color-primary-1);
+}
+
+#container {
+    align-content: center;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px; 
+}
+
+#container div {
+    z-index: 1;
+    width: 40dvh;
+    height: 90dvh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    color: var(--color-primary-1);
+    transition: transform 0.3s ease;
+}
+
+#container div:hover {
+    transform: scale(1.15);
+    box-shadow: 0 2px 8px var(--color-primary-4);
+}
+
+#container h3 {
+    color: var(--color-primary-2);
+    font-size: 5dvh;
+    margin-bottom: 0;
+}
+
+.description {
+    justify-content: space-between;
+    position: relative;
+    z-index: 1; 
+}
+
+.description h3,
+.description h2 {
+    position: relative;
+    z-index: 2;
+}
+
+
+#container div:hover .description {
+    transform: none; 
+    box-shadow: none;
 }

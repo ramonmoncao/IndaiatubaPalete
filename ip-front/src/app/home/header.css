@@ -1,4 +1,5 @@
     header{
+        z-index: 10;
         width: 100%;
         position: sticky;
         top: 3dvh;
@@ -7,7 +8,7 @@
         border-radius: 15dvb;
     }
     #navbar{
-        z-index: 999;
+        z-index: 10;
         backdrop-filter: blur(4px);
         justify-self: center;
         background-color: rgb(166, 196, 242, 1);

@@ -81,33 +81,38 @@ return (
 
             <section id="catalog" ref={catalogSection}>
                 <div id='catalog-div'>
-                    <h1>Nossos produtos</h1>
-                    <div id="id">
-                        <div id="content">
-                            <div>
+                    <h1>Catálogo</h1>
+                    
+                    <div id="container">
+    <div className="item">
+        <Image src={"/Roberto.jpg"} alt="img" width={300} height={200} />
+        <div className="description">
+            <h3>Paletes de madeira</h3>
+            <h2>Os paletes de madeira são plataformas robustas, projetadas para armazenar, organizar
+                e transportar cargas com eficiência. Sua resistência e praticidade fazem delas uma solução econômica e sustentável para diversas aplicações.</h2>
+        </div>
+    </div>
 
-                                <h3>Paletes de madeira</h3>
-                                <h2>Os paletes de madeira são plataformas robustas, projetadas para armazenar, organizar
-                                    e transportar cargas com eficiência.
-                                    Sua resistência e praticidade fazem delas uma solução econômica e sustentável para diversas aplicações.</h2>
-                            </div>
-                            <div>
+    <div className="item">
+        <Image src={"/Roberto.jpg"} alt="img" width={300} height={200} />
+        <div className="description">
+            <h3>Paletes de plástico</h3>
+            <h2>Os paletes de plástico são plataformas leves, duráveis e resistentes à umidade,
+                projetadas para facilitar o transporte, armazenamento e organização de mercadorias.
+                Ideais para setores que exigem alta higiene e longa vida útil.</h2>
+        </div>
+    </div>
 
-                                <h3>Paletes de plástico</h3>
-                                <h2>Os paletes de plástico são plataformas leves, duráveis e resistentes à umidade,
-                                    projetadas para facilitar o transporte, armazenamento e organização de mercadorias.
-                                    Ideais para setores que exigem alta higiene e longa vida útil.</h2>
-                            </div>
-                            <div>
+    <div className="item">
+        <Image src={"/Roberto.jpg"} alt="img" width={300} height={200} />
+        <div className="description">
+            <h3>Chapatex</h3>
+            <h2>O chapatex é um material versátil e econômico, amplamente utilizado na fabricação de
+                móveis, embalagens, revestimentos e projetos de design. Oferecendo resistência, leveza e uma superfície uniforme.</h2>
+        </div>
+    </div>
+</div>
 
-                                <h3>Chapatex</h3>
-                                <h2>O chapatex é um material versátil e econômico, amplamente utilizado na fabricação de
-                                    móveis, embalagens, revestimentos e projetos de design. Ele é produzido a partir de fibras de
-                                    madeira prensadas, oferecendo resistência, leveza e uma superfície uniforme. </h2>
-                            </div>
-                        </div>
-                        <button id="btn-download">Baixe nosso catálogo completo</button>
-                    </div>
                 </div>
             </section>
 
