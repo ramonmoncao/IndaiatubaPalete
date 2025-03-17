@@ -7,7 +7,8 @@ export default function NotFound(){
         <main>
             <div id="notfound-div">
                 <div id="images">
-                    <Link href={'/home'}><Image src="/ipicon.png" alt="Palete" width={100} height={100} style={{filter : 'brightness(0)'}} /></Link>
+                    <Link href={'/home'}>
+                    <Image src="/ipicon.png" alt="Palete" width={100} height={100} style={{filter : 'brightness(0)'}} /></Link>
                 </div>
                 <h1>Ops.<br/> Página não encontrada.</h1>
             </div>
