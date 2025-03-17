@@ -8,7 +8,7 @@
 
 #catalog-div {
     background-color: var(--color-primary-5);
-    border-radius: 0 0 0 10vmin; /* Use vmin em vez de dvw */
+    border-radius: 0 0 0 9rem; 
     display: flex;
     flex-direction: column;
     padding-bottom: 5rem; /* Use rem em vez de dvh */

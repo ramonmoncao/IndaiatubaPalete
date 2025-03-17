@@ -76,7 +76,7 @@
 
 @media (max-width: 800px) {
     #about-div {
-        border-radius: 0 0 0 50px; /* Valor fixo em px */
+        border-radius: 0 0 0 7rem; /* Valor fixo em px */
     }
 
     #about-grid {
