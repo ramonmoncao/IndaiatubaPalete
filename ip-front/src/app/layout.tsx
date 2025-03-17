@@ -50,7 +50,7 @@ export default function RootLayout({
         <div id= "footer-div">
           <div id="footer-items">
               <div id="copyright">
-                  <Image src="/ipicon.png" alt="LogoIP" width={100} height={100} style={{ filter: 'brightness(1000%)' }}/>
+                  <Image src="/ipicon.png" id= "logoip" alt="LogoIP" width={100} height={100} style={{ filter: 'brightness(1000%)' }}/>
                   &copy; Indaiatuba Palete 2025 - Todos os direitos reservados
               </div>
               <ul id="footer_list">

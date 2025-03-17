@@ -66,6 +66,9 @@ header {
     border-color: transparent;
     transition: transform 0.3s ease;
 }
+#btn-navbar-mobile{
+    display: none;
+}
 
 #btn-navbar:hover {
     color: var(--color-primary-1);
@@ -80,7 +83,6 @@ header {
     #navbar {
         width: 90%;
         box-shadow: none;
-        flex-direction: column;
         align-items: center;
 
     }
@@ -97,6 +99,22 @@ header {
     #btn-navbar {
         display: none;
     }
+    #btn-navbar-mobile{
+        display: flex;
+        background-color: var(--color-primary-6);
+        color: var(--color-primary-1);
+        border-radius: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-width: 10px;
+        border-color: transparent;
+        transition: transform 0.3s ease;
+    }
+    #btn-navbar-mobile:hover {
+        color: var(--color-primary-1);
+        transform: scale(0.9);
+    }
+    
 }
 
 @media (max-width: 600px) {

@@ -3,11 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { FaRegCircleUser } from 'react-icons/fa6';
 import './about.css';
 import './catalog.css';
 import './contact.css';
 import './header.css';
 import './home.css';
+
 
 export default function Home() {
     const aboutSection = useRef<HTMLDivElement | null>(null);
@@ -68,6 +70,7 @@ export default function Home() {
                         <button className={`btn ${activeSection === 'about' ? 'active' : ''}`} onClick={() => scrollToSection(aboutSection!, 'about')}>Sobre nós</button>
                         <button className={`btn ${activeSection === 'catalog' ? 'active' : ''}`} onClick={() => scrollToSection(catalogSection!, 'catalog')}>Catálogo</button>
                         <Link href={'/login'}><button id="btn-navbar">CONTATE-NOS</button></Link>
+                        <Link href={'/login'}><button id="btn-navbar-mobile"><FaRegCircleUser size={24} color="var(--color-primary-1)" /></button></Link>
                     </div>
                 </nav>
             </header>

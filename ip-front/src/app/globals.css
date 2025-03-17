@@ -73,6 +73,10 @@ html{
   
   #footer-items {
     flex-direction: row;
+    justify-content: center;
     align-items: center;
+  }
+  #logoip{
+    width: 50px;
   }
 }
