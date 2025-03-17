@@ -1,4 +1,5 @@
 /* Estilo para a página de login */
+
 #signup-div {
     /* Use position relative em vez de fixed para respeitar o layout do Next */
     position: relative;
@@ -9,56 +10,14 @@
     justify-content: space-around;
     align-items: center;
     background: linear-gradient(rgba(59, 123, 227, 0.9), rgba(59, 123, 227, 0.9)), url('../../../../public/background.jpg');
+    box-shadow: inset 0 0 50px 50px var(--color-primary-3);
     background-size: cover;
     background-position: center;
     padding: 20px 0; /* Adiciona um pouco de padding vertical para espaçamento */
 }
 
-#box {
-    display: flex;
-    background-color: var(--color-primary-1);
-    max-width: 500px;
-    width: 90%;
-    padding: 40px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    /* Limite a altura máxima para garantir que não transborde */
-    max-height: 80vh;
-    overflow: hidden;
-}
 
-#form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding-top: 20px;
-    gap: 30px;
-}
-.input-group input {
-    width: 100%;
-    font-size: 16px;
-    color: #333;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    outline: none;
-    background: transparent;
-}
 
-#login-btn:hover{
-    transform: scale(1.1);
-}
-#login-btn{
-    background-color: var(--color-primary-5);
-    color: var(--color-primary-1);
-    border-radius: 20px;
-    padding:10px 20%;
-    border-width: 10px;
-    border-color: transparent;
-    transition: transform 0.3s ease;
-}
 #box h1{
     font-family: "Bebas Neue",sans-serif;
     font-size: 3rem;
@@ -81,12 +40,10 @@
     #images{
         padding-bottom: 20px;
     }
-    #box {
-        width: 95%;
-    }
     #signup-div{
         flex-direction: column;
         justify-content: flex-start;
+        box-shadow: inset 0 0 8px 8px var(--color-primary-3);
     }
     #palete{
         display: none;

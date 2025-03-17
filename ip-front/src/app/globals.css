@@ -63,6 +63,9 @@ html{
   #footer-items {
     gap: 10px;
   }
+  .box {
+    width: 90%;
+}
 }
 
 @media (max-width: 600px) {
@@ -79,4 +82,66 @@ html{
   #logoip{
     width: 50px;
   }
+}
+
+/*seções de input*/
+.input-group input {
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  background: transparent;
+}
+
+.box {
+  display: flex;
+  background-color: var(--color-primary-1);
+  max-width: 500px;
+  width: 100%;
+  padding: 40px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-height: 80vh;
+  overflow: hidden;
+}
+.box h1{
+  font-family: "Bebas Neue",sans-serif;
+  font-size: 5rem;
+  color: var(--color-primary-5);
+  gap: 0px;
+  
+}
+/*header*/
+.header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendbtn{
+  background-color: var(--color-primary-5);
+  color: var(--color-primary-1);
+  border-radius: 20px;
+  padding:10px 20%;
+  border-width: 10px;
+  border-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.sendbtn:hover{
+  transform: scale(1.1);
+}
+/*formularios*/
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
+  gap: 30px;
 }
