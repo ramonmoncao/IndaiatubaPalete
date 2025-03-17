@@ -8,10 +8,10 @@
 
 #catalog-div {
     background-color: var(--color-primary-5);
-    border-radius: 0 0 0 10dvw;
+    border-radius: 0 0 0 10vmin; /* Use vmin em vez de dvw */
     display: flex;
     flex-direction: column;
-    padding-bottom: 20dvh;
+    padding-bottom: 5rem; /* Use rem em vez de dvh */
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
@@ -19,8 +19,8 @@
 
 #catalog h1 {
     align-self: center;
-    font-size: 10dvh;
-    padding-bottom: 5dvh;
+    font-size: 2.5rem; /* Tamanho fixo em rem */
+    padding-bottom: 2rem;
     color: var(--color-primary-1);
     text-align: center;
     width: 100%;
@@ -40,9 +40,10 @@
 
 #container div {
     z-index: 1;
-    width: 40dvh;
+    width: 300px; /* Largura fixa em px */
     max-width: 90%;
-    height: 90dvh;
+    height: auto; /* Altura automática baseada no conteúdo */
+    min-height: 400px; /* Altura mínima fixa */
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -58,7 +59,7 @@
 
 #container h3 {
     color: var(--color-primary-2);
-    font-size: 5dvh;
+    font-size: 1.5rem; /* Use rem em vez de dvh */
     margin-bottom: 0;
 }
 
@@ -100,22 +101,22 @@
     }
     
     #catalog h1 {
-        font-size: 7dvh;
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 600px) {
     #container h3 {
-        font-size: 4dvh;
+        font-size: 1.25rem;
     }
     
     .description {
-        font-size: 2.5dvh;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 400px) {
     #catalog h1 {
-        font-size: 6dvh;
+        font-size: 1.75rem;
     }
 }
