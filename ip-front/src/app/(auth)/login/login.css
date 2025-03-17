@@ -1,34 +1,49 @@
-#login-div{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    background-color: var(--color-primary-1);
-    
-}
-#images{
-    background: linear-gradient(rgba(59, 123, 227, 0.9), rgba(59, 123, 227, 0.9)), url('../../../../public/background.jpg');
-    height: 100%;
-    padding-top: 2dvi;
-    display: flex;
-    width: 60%;
-    border-radius: 0 0 100dvh 0;
-    flex-direction: column;
-    align-content: center;
-    padding-left: 2dvh;
-    background-color: var(--color-primary-3);
-}
-#box{
-    background-color: var(--color-primary-1);
-    height: 100%;
-    width: 40%;
+/* Estilo para a página de login */
+#login-div {
+    /* Use position relative em vez de fixed para respeitar o layout do Next */
+    position: relative;
+    width: 100%;
+    /* Ajuste a altura para considerar o espaço do footer */
+    min-height: calc(100vh - var(--footer-height, 0px));
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(rgba(59, 123, 227, 0.9), rgba(59, 123, 227, 0.9)), url('../../../../public/background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0; /* Adiciona um pouco de padding vertical para espaçamento */
 }
 
-#form{
+#box {
+    background-color: var(--color-primary-1);
+    max-width: 500px;
+    width: 90%;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    /* Limite a altura máxima para garantir que não transborde */
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    #box {
+        width: 95%;
+        padding: 25px;
+    }
+    #login-div{
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20dvh;
+    }
+    #palete{
+        display: none;
+    }
 }

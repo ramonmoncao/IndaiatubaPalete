@@ -1,6 +1,9 @@
+/* CATALOG */
 #catalog {
     background: linear-gradient(var(--color-primary-1), var(--color-primary-4));
     z-index: 1;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 #catalog-div {
@@ -9,6 +12,9 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 20dvh;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 #catalog h1 {
@@ -16,18 +22,26 @@
     font-size: 10dvh;
     padding-bottom: 5dvh;
     color: var(--color-primary-1);
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
 }
 
 #container {
     align-content: center;
     display: flex;
     justify-content: space-evenly;
-    gap: 20px; 
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 5%;
+    flex-wrap: wrap;
 }
 
 #container div {
     z-index: 1;
     width: 40dvh;
+    max-width: 90%;
     height: 90dvh;
     display: flex;
     flex-direction: column;
@@ -51,7 +65,7 @@
 .description {
     justify-content: space-between;
     position: relative;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .description h3,
@@ -61,24 +75,48 @@
 }
 
 #container div:hover .description {
-    transform: none; 
+    transform: none;
     box-shadow: none;
 }
 
 @media (max-width: 900px) {
     #container {
-        overflow-x: auto; /* Permite rolagem horizontal */
-        scroll-snap-type: x mandatory; /* Alinha os itens ao rolar */
-        justify-content: flex-start; /* Alinha os itens à esquerda */
-        gap: 10px; /* Reduz o espaçamento entre os itens */
-        padding-bottom: 20px; /* Adiciona espaço para a barra de rolagem */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 0 5% 20px 5%;
+        flex-wrap: nowrap;
     }
 
     #container div {
-        scroll-snap-align: start; /* Alinha o item ao rolar */
+        scroll-snap-align: start;
+        min-width: 85%;
+        height: auto;
+        max-height: 80dvh;
     }
 
     #container div:hover {
-        transform: none; /* Remove o efeito de hover em dispositivos móveis */
+        transform: none;
+    }
+    
+    #catalog h1 {
+        font-size: 7dvh;
+    }
+}
+
+@media (max-width: 600px) {
+    #container h3 {
+        font-size: 4dvh;
+    }
+    
+    .description {
+        font-size: 2.5dvh;
+    }
+}
+
+@media (max-width: 400px) {
+    #catalog h1 {
+        font-size: 6dvh;
     }
 }

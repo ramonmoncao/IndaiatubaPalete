@@ -5,7 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-
+  --footer-height: 60px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,19 +33,46 @@ html{
 
 /*footer*/
 
-#footer-div{
+/* FOOTER */
+#footer-div {
   z-index: 10;
   font-size: 14px;
-  padding-top: 5dvh;
+  padding: 5dvh 5% 3dvh 5%;
   background-color: var(--color-primary-5);
   color: var(--color-primary-1);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
-#footer-items{
+
+#footer-items {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
 }
+
 @media (max-width: 800px) {
-    #footer-div{
-      font-size: 12px;
-    }
+  #footer-div {
+    max-width: 100%;
+    font-size: 12px;
+    padding: 4dvh 5% 2dvh 5%;
+  }
+  
+  #footer-items {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  #footer-div {
+    font-size: 11px;
+    text-align: center;
+  }
+  
+  #footer-items {
+    flex-direction: row;
+    align-items: center;
+  }
 }
