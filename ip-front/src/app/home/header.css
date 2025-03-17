@@ -32,10 +32,12 @@ header {
     overflow: hidden;
     flex-wrap: wrap;
 }
-
+#nav_logo{
+    display: flex;
+    justify-content: center;
+}
 #logo_icon {
-    width: 15dvh;
-    max-width: 80px;
+    width: 100%;
     padding: 2dvh;
     filter: brightness(0);
 }

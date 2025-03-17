@@ -1,5 +1,5 @@
 /* Estilo para a página de login */
-#login-div {
+#signup-div {
     /* Use position relative em vez de fixed para respeitar o layout do Next */
     position: relative;
     width: 100%;
@@ -26,7 +26,7 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     /* Limite a altura máxima para garantir que não transborde */
     max-height: 80vh;
-    overflow:hidden
+    overflow: hidden;
 }
 
 #form {

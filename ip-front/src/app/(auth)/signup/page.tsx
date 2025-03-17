@@ -1,25 +1,30 @@
-import { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import './login.css';
+import { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import './signup.css'
+
 export const metadata: Metadata = {
-    title: "Login"
+    title: "Signup"
 }
 export default function Login(){
 
     return(
         <>
         <main>
-            <div id="login-div">
+            <div id="signup-div">
                 <div id="images">
                     <Link href={'/home'}><Image src="/ipicon.png" alt="Palete" width={100} height={100} style={{filter : 'brightness(1000%)'}} /></Link>
                     <Image src="/palete.png" id="palete" alt="Palete" width={600} height={600} /></div>
                 <div id = "box">
-                <h1>Olá!</h1>
-                <h2>Seja bem vindo novamente.</h2>
+                <h1>Registre-se</h1>
                     <form id ="form">
                         <div className='input-group'>
-                        <label>Usuário</label>
+                        <label>Nome</label>
+                        <input></input>
+                        <div id='line'></div>
+                        </div>
+                        <div className='input-group'>
+                        <label>Email</label>
                         <input></input>
                         <div id='line'></div>
                         </div>
@@ -28,11 +33,10 @@ export default function Login(){
                         <input type='password'></input>
                         <div id='line'></div>
                         </div>
-                        <button id="login-btn">login</button>
+                        <button id="login-btn">prosseguir</button>
                     </form>
                     <div id="options">
-                        <p>novo por aqui? <Link className="link" href={"/signup"}>Registre-se</Link></p>
-                        <Link className="link" href={"/password"}><p>esqueci minha senha.</p></Link>
+                        <p>já tem uma conta? <Link className="link" href={"/login"}>login</Link></p>
                     </div>
                 </div>
             </div>

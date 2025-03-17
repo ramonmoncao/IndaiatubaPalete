@@ -10,15 +10,17 @@ import './contact.css';
 import './header.css';
 import './home.css';
 
-
 export default function Home() {
+    useEffect(() => {
+        // Altera o título da página
+        document.title = "Home | Indaiatuba Palete";
+    }, []);
     const aboutSection = useRef<HTMLDivElement | null>(null);
     const catalogSection = useRef<HTMLDivElement | null>(null);
     const homeSection = useRef<HTMLDivElement | null>(null);
 
     const [activeSection, setActiveSection] = useState('home');
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-
     const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement | null>, sectionName: string) => {
         if (sectionRef.current) {
             sectionRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -59,7 +61,9 @@ export default function Home() {
     }, []);
 
     return (
+        
         <>
+        
             <header>
                 <nav id="navbar">
                     <div id="nav_logo">
