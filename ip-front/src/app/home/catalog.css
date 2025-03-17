@@ -93,7 +93,6 @@
         scroll-snap-align: start;
         min-width: 85%;
         height: auto;
-        max-height: 80dvh;
     }
 
     #container div:hover {
