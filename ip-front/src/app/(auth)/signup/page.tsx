@@ -14,9 +14,8 @@ export default function Login(){
             <Link href={'/home'}><Image src="/ipicon.png" alt="Palete" width={100} height={100} style={{filter : 'brightness(1000%)'}} /></Link>
         </header>
         <main>
+        <section id="signup">
             <div id="signup-div">
-                <div id="images">
-                    <Image src="/palete.png" id="palete" alt="Palete" width={600} height={600} /></div>
                 <div className = "box">
                 <h1>Registre-se</h1>
                     <form className ="form">
@@ -37,11 +36,12 @@ export default function Login(){
                         </div>
                         <button className="sendbtn">prosseguir</button>
                     </form>
-                    <div id="options">
+                    <div className="options">
                         <p>já tem uma conta? <Link className="link" href={"/login"}>login</Link></p>
                     </div>
                 </div>
             </div>
+            </section>
         </main>
         </>
     )

@@ -8,7 +8,7 @@
 
 #catalog-div {
     background-color: var(--color-primary-5);
-    border-radius: 0 0 0 9rem; 
+    border-radius: 0 0 0 100px; 
     display: flex;
     flex-direction: column;
     padding-bottom: 5rem; /* Use rem em vez de dvh */

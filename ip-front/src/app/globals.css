@@ -53,36 +53,6 @@ html{
   width: 100%;
 }
 
-@media (max-width: 800px) {
-  #footer-div {
-    max-width: 100%;
-    font-size: 12px;
-    padding: 4dvh 5% 2dvh 5%;
-  }
-  
-  #footer-items {
-    gap: 10px;
-  }
-  .box {
-    width: 90%;
-}
-}
-
-@media (max-width: 600px) {
-  #footer-div {
-    font-size: 11px;
-    text-align: center;
-  }
-  
-  #footer-items {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  #logoip{
-    width: 50px;
-  }
-}
 
 /*seções de input*/
 .input-group input {
@@ -107,16 +77,32 @@ html{
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   max-height: 80vh;
   overflow: hidden;
+  border-radius: 20px;
 }
 .box h1{
   font-family: "Bebas Neue",sans-serif;
   font-size: 5rem;
   color: var(--color-primary-5);
   gap: 0px;
-  
+}
+.box h2{
+  font-family: "Bebas Neue",sans-serif;
+  font-size: 25px;
+}
+.options{
+  align-items: center;
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  gap: 40px;
+}
+.link{
+  color: var(--color-primary-5);
 }
 /*header*/
 .header{
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -144,4 +130,48 @@ html{
   width: 100%;
   padding-top: 20px;
   gap: 30px;
+}
+
+@media (max-width: 800px) {
+  #footer-div {
+    max-width: 100%;
+    font-size: 12px;
+    padding: 4dvh 5% 2dvh 5%;
+  }
+  
+  #footer-items {
+    gap: 10px;
+  }
+  .box {
+    width: 90%;
+    justify-content: center;
+    font-size: 13px;
+  }
+  .box h1{
+    font-size: 40px;
+  }
+  .box h2{
+    display: flex;
+    font-size: large;
+  }
+  .options{
+    flex-direction: column;
+}
+  
+}
+
+@media (max-width: 600px) {
+  #footer-div {
+    font-size: 11px;
+    text-align: center;
+  }
+  
+  #footer-items {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #logoip{
+    width: 50px;
+  }
 }

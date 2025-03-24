@@ -1,5 +1,7 @@
 /* Estilo para a página de login */
-
+#signup{
+    background-color: var(--color-primary-1);
+}
 #signup-div {
     /* Use position relative em vez de fixed para respeitar o layout do Next */
     position: relative;
@@ -14,28 +16,9 @@
     background-size: cover;
     background-position: center;
     padding: 20px 0; /* Adiciona um pouco de padding vertical para espaçamento */
+    border-radius: 0 0 100% 0;
 }
 
-
-
-#box h1{
-    font-family: "Bebas Neue",sans-serif;
-    font-size: 3rem;
-    color: var(--color-primary-5);
-    gap: 0px;
-    
-}
-#options{
-    align-items: center;
-    font-size: 13px;
-    display: flex;
-    flex-direction: row;
-    padding: 30px;
-    gap: 40px;
-}
-.link{
-    color: var(--color-primary-5);
-}
 @media (max-width: 800px) {
     #images{
         padding-bottom: 20px;
@@ -47,11 +30,6 @@
     }
     #palete{
         display: none;
-    }
-    #options{
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
     }
     #form{
         gap: 15px;

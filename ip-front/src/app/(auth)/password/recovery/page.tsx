@@ -22,6 +22,7 @@ export default function PasswordRecovery(){
                         </div>
                             <button className="sendbtn">enviar</button>
                     </form>
+                    <div className="options"><Link className="link" href={"/login"}>voltar</Link></div>
                 </div>
             </div>
             </section>
