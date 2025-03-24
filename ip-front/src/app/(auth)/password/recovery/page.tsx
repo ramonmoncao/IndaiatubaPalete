@@ -12,7 +12,7 @@ export default function PasswordRecovery(){
             <section id ="password">
             <div id="recovery">
                 <div className ="box">
-                    <h1>recupere a senha</h1>
+                    <h1>recupere sua senha</h1>
                     <form className='form'>
                         <div className="input-group">
                             <label>
