@@ -1,0 +1,122 @@
+/* CATALOG */
+#catalog {
+    background: linear-gradient(var(--color-primary-1), var(--color-primary-4));
+    z-index: 1;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#catalog-div {
+    background-color: var(--color-primary-5);
+    border-radius: 0 0 0 100px; 
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5rem; /* Use rem em vez de dvh */
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#catalog h1 {
+    align-self: center;
+    font-size: 2.5rem; /* Tamanho fixo em rem */
+    padding-bottom: 2rem;
+    color: var(--color-primary-1);
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+#container {
+    align-content: center;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 5%;
+    flex-wrap: wrap;
+}
+
+#container div {
+    z-index: 1;
+    width: 300px; /* Largura fixa em px */
+    max-width: 90%;
+    height: auto; /* Altura automática baseada no conteúdo */
+    min-height: 400px; /* Altura mínima fixa */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    color: var(--color-primary-1);
+    transition: transform 0.3s ease;
+}
+
+#container div:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+#container h3 {
+    color: var(--color-primary-2);
+    font-size: 1.5rem; /* Use rem em vez de dvh */
+    margin-bottom: 0;
+}
+
+.description {
+
+    position: relative;
+    z-index: 1;
+}
+
+.description h3,
+.description h2 {
+    position: relative;
+    z-index: 2;
+}
+
+#container div:hover .description {
+    transform: none;
+    box-shadow: none;
+}
+
+@media (max-width: 900px) {
+    #container {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 0 5% 20px 5%;
+        flex-wrap: nowrap;
+    }
+
+    #container div {
+        scroll-snap-align: start;
+        min-width: 85%;
+        height: auto;
+    }
+
+    #container div:hover {
+        transform: none;
+    }
+    
+    #catalog h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #container h3 {
+        font-size: 1.25rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    #catalog h1 {
+        font-size: 1.75rem;
+    }
+}

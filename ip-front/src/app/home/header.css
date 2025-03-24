@@ -1,0 +1,123 @@
+/* HEADER */
+header {
+    z-index: 10;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    justify-content: center;
+    display: flex;
+    padding: 10px 0;
+    overflow: hidden;
+    max-width: 100vw;
+}
+
+#navbar {
+    z-index: 10;
+    background-color: var(--color-primary-1);
+    box-shadow: 0px 2px 5px var(--color-primary-5);
+    width: 90%;
+    max-width: 1200px;
+    justify-content: space-between;
+    display: flex;
+    border-radius: 16px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#nav_list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 2dvh;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+#nav_logo{
+    display: flex;
+    justify-content: center;
+}
+#logo_icon {
+    width: 100%;
+    padding: 2dvh;
+    filter: brightness(0);
+}
+
+.btn {
+    border-style: none;
+    padding: 4dvh;
+    color: var(--color-primary-6);
+    font-size: 20px;
+    transition: color 0.3s ease-in-out;
+    justify-content: center;
+}
+
+.btn:hover {
+    color: var(--color-primary-2);
+}
+
+
+#btn-navbar {
+    background-color: var(--color-primary-6);
+    color: var(--color-primary-1);
+    border-radius: 100px;
+    padding: 15px 30px;
+    border-width: 10px;
+    border-color: transparent;
+    transition: transform 0.3s ease;
+}
+#btn-navbar-mobile{
+    display: none;
+}
+
+#btn-navbar:hover {
+    color: var(--color-primary-1);
+    transform: scale(1.1);
+}
+
+@media (max-width: 800px) {
+    header {
+        position: static;
+    }
+
+    #navbar {
+        width: 90%;
+        box-shadow: none;
+        align-items: center;
+
+    }
+
+    #nav_list {
+        gap: 10px;
+        padding-right: 0;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    #btn-navbar {
+        display: none;
+    }
+    #btn-navbar-mobile{
+        display: flex;
+        background-color: var(--color-primary-6);
+        color: var(--color-primary-1);
+        border-radius: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-width: 10px;
+        border-color: transparent;
+        transition: transform 0.3s ease;
+    }
+    #btn-navbar-mobile:hover {
+        color: var(--color-primary-1);
+        transform: scale(0.9);
+    }
+    
+}
+
+@media (max-width: 600px) {
+    #logo_icon {
+        max-width: 60px;
+    }
+}

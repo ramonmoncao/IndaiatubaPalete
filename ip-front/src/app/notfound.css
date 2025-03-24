@@ -1,0 +1,11 @@
+#notfound-div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: var(--color-primary-1);
+    font-size: 2rem;
+    padding: 2rem;
+    padding-bottom: 40rem;
+    gap: 20px;
+}

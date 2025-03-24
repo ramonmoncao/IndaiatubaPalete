@@ -1,0 +1,121 @@
+/* HOME */
+#home {
+    background-color: var(--color-primary-1);
+    width: 100%;
+    height: 100vh; /* Pode manter 100vh para a seção inicial completa */
+    overflow-x: hidden;
+}
+
+#home-div {
+    width: 100%;
+    height: 100%; /* Use altura relativa ao pai em vez de vh */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(59, 123, 227, 0.9), rgba(59, 123, 227, 0.9)), url('../../../public/background.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 50px 50px var(--color-primary-3);
+    border-radius: 0 0 80% 0;
+    padding-bottom: 3rem; /* Valor fixo em rem */
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+}
+
+#logo {
+    font-weight: 300;
+    font-size: 1.8rem; /* Tamanho fixo em rem */
+    color: var(--color-primary-5);
+    text-align: center;
+}
+
+#title {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-primary-1);
+    font-weight: bolder;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.5rem; /* Tamanho fixo em rem */
+    text-align: center;
+}
+
+#title span {
+    align-self: center;
+    color: var(--color-primary-5);
+    font-weight: bolder;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#btn-home {
+    background-color: var(--color-primary-2);
+    color: var(--color-primary-6);
+    border: none;
+    border-radius: 40px;
+    padding: 30px 40px 30px 40px;
+    box-shadow: 0px 5px 5px var(--color-primary-4);
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem; /* Tamanho fixo em rem em vez de xx-large */
+    transition: transform 0.4s ease;
+    max-width: 100%;
+}
+
+#subtitle {
+    color: var(--color-primary-5);
+    padding: 2rem; /* Valor fixo em rem */
+    text-align: center;
+    max-width: 100%;
+    font-size: 1.2rem; /* Tamanho base em rem */
+}
+
+#btn-home:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    #home {
+        max-width: 100%;
+    }
+
+    #home-div {
+        max-width: 100%;
+        border-radius: 0 0 40% 0;
+    }
+
+    #title {
+        font-size: 2.5rem; /* Tamanho fixo em rem */
+    }
+
+    #btn-home {
+        padding: 20px 30px;
+        font-size: 1.2rem; /* Tamanho fixo em rem */
+        white-space: normal;
+        text-align: center;
+    }
+
+    #subtitle {
+        font-size: 1rem; /* Tamanho fixo em rem */
+    }
+}
+
+@media (max-width: 400px) {
+    #title {
+        font-size: 2rem; /* Tamanho fixo em rem */
+    }
+    
+    #subtitle {
+        font-size: 0.9rem; /* Tamanho fixo em rem */
+        padding: 1.5rem; /* Valor fixo em rem */
+    }
+    
+    #btn-home {
+        padding: 15px 25px;
+        font-size: 1rem; /* Tamanho fixo em rem */
+    }
+}
