@@ -21,19 +21,19 @@ public class ProductService {
     }
 
     public ProductResponseDTO createProduct(ProductCreateRequestDTO productCreateRequestDTO) {
-        Product product = ProductMapper.createToEntity(productCreateRequestDTO);
-        productRepository.save(product);
-        return ProductMapper.toResponse(product);
+        Product product = ProductMapper.toEntity(productCreateRequestDTO);
+        Product saved = productRepository.save(product);
+        return ProductMapper.toResponseDTO(saved);
     }
 
     public List<ProductResponseDTO> getAllProducts() {
         List<Product> products = productRepository.findAll();
-        return ProductMapper.toResponseList(products);
+        return ProductMapper.toResponseDTO(products);
     }
 
     public ProductResponseDTO getProductById(Long id) {
         Product product = productRepository.findById(id)
             .orElseThrow(()->new  ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
-        return ProductMapper.toResponse(product);
+        return ProductMapper.toResponseDTO(product);
     }
 }

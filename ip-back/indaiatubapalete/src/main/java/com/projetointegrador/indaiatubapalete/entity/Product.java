@@ -12,13 +12,23 @@ public class Product {
     private Long id;
     private String name;
     private String description;
+    private ProductType productType;
 
-    public Product( String name, String description) {
+    public Product( String name, String description, ProductType productType) {
         this.name = name;
         this.description = description;
+        this.productType = productType;
     }
 
     public Product() {
+    }
+
+    public ProductType getProductType() {
+        return productType;
+    }
+
+    public void setProductClass(ProductType productType) {
+        this.productType = productType;
     }
 
     public Long getId() {

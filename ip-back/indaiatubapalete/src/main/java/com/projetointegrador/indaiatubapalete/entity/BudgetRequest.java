@@ -2,20 +2,21 @@ package com.projetointegrador.indaiatubapalete.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-public class OrcamentoRequest {
+public class BudgetRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
-    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-    @ManyToOne
-    @JoinColumn(name = "sub_total_id")
-    private SubTotal subTotal;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "budget_id")
+    private List<SubTotal> subTotal;
+
+    private BudgetRequestStatus status;
 
     public Long getId() {
         return id;
@@ -25,11 +26,11 @@ public class OrcamentoRequest {
         this.id = id;
     }
 
-    public SubTotal getSubTotal() {
+    public List<SubTotal> getSubTotal() {
         return subTotal;
     }
 
-    public void setSubTotal(SubTotal subTotal) {
+    public void setSubTotal(List<SubTotal> subTotal) {
         this.subTotal = subTotal;
     }
 
@@ -41,13 +42,11 @@ public class OrcamentoRequest {
         this.user = user;
     }
 
-    public Product getProduct() {
-        return product;
+    public BudgetRequestStatus getStatus() {
+        return status;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setStatus(BudgetRequestStatus status) {
+        this.status = status;
     }
-
-
 }

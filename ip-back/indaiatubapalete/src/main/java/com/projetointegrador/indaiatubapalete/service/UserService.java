@@ -24,21 +24,21 @@ public class UserService {
 
     public UserResponseDTO createUser(UserCreateRequestDTO userCreateRequestDTO){
         if(userRepository.findByEmail(userCreateRequestDTO.email()).isPresent()){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Email já em uso");
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Email already exists");
         }
-        User user = UserMapper.createToEntity(userCreateRequestDTO);
+        User user = UserMapper.toEntity(userCreateRequestDTO);
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
-        return UserMapper.toResponse(user);
+        User saved = userRepository.save(user);
+        return UserMapper.toResponseDTO(saved);
     }
     public List<UserResponseDTO> getAllUsers(){
         List<User> users = userRepository.findAll();
-        return UserMapper.toResponseList(users);
+        return UserMapper.toResponseDTO(users);
     }
     public UserResponseDTO getUserById(Long id){
         User user = userRepository.findById(id)
-                .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        return UserMapper.toResponse(user);
+                .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"User not found"));
+        return UserMapper.toResponseDTO(user);
     }
 }

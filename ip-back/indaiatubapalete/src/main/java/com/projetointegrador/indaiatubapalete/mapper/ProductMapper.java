@@ -8,23 +8,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductMapper {
-    public static Product createToEntity(ProductCreateRequestDTO ProductCreateRequestDTO) {
+    public static Product toEntity(ProductCreateRequestDTO productCreateRequestDTO) {
         return new Product(
-                ProductCreateRequestDTO.name(),
-                ProductCreateRequestDTO.description()
+                productCreateRequestDTO.name(),
+                productCreateRequestDTO.description(),
+                productCreateRequestDTO.type()
         );
     }
-    public static ProductResponseDTO toResponse(Product Product) {
+    public static ProductResponseDTO toResponseDTO(Product product) {
         return new ProductResponseDTO(
-                Product.getId(),
-                Product.getName(),
-                Product.getDescription());
+                product.getId(),
+                product.getName(),
+                product.getDescription(),
+                product.getProductType()
+                );
     }
-    public static List<ProductResponseDTO> toResponseList(List<Product> Products) {
-        List<ProductResponseDTO> ProductResponseDTOs = new ArrayList<>();
+    public static List<ProductResponseDTO> toResponseDTO(List<Product> Products) {
+        List<ProductResponseDTO> budgetResponseDTOS = new ArrayList<>();
         for (Product product : Products) {
-            ProductResponseDTOs.add(toResponse(product));
+            budgetResponseDTOS.add(toResponseDTO(product));
         }
-        return ProductResponseDTOs;
+        return budgetResponseDTOS;
     }
 }

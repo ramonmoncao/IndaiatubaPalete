@@ -10,7 +10,7 @@ import java.util.List;
 
 public class UserMapper {
 
-    public static User createToEntity(UserCreateRequestDTO userCreateRequestDTO) {
+    public static User toEntity(UserCreateRequestDTO userCreateRequestDTO) {
         return new User(
                 userCreateRequestDTO.email(),
                 userCreateRequestDTO.name(),
@@ -19,21 +19,19 @@ public class UserMapper {
                 UserType.CLIENT
         );
     }
-    public static UserResponseDTO toResponse(User user) {
+    public static UserResponseDTO toResponseDTO(User user) {
         return new UserResponseDTO(
                 user.getId(),
                 user.getName(),
                 user.getEmail(),
                 user.getPhoneNumber(),
-                user.getUserType(),
-                user.getOrcamentoRequest() != null ?
-                        user.getOrcamentoRequest().getId() : null
+                user.getUserType()
         );
     }
-    public static List<UserResponseDTO> toResponseList(List<User> users) {
+    public static List<UserResponseDTO> toResponseDTO(List<User> users) {
         List<UserResponseDTO> userResponseDTOs = new ArrayList<>();
         for (User user : users) {
-            userResponseDTOs.add(toResponse(user));
+            userResponseDTOs.add(toResponseDTO(user));
         }
         return userResponseDTOs;
     }

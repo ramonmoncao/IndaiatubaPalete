@@ -1,6 +1,9 @@
 package com.projetointegrador.indaiatubapalete.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "Users")
@@ -11,9 +14,9 @@ public class User {
     private String name;
     private String email;
     private String password;
-    @ManyToOne
-    @JoinColumn(name = "orcamento_request_id")
-    private OrcamentoRequest orcamentoRequest;
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private List<BudgetRequest> budgetRequest;
     private int phoneNumber;
     private UserType userType;
 
@@ -72,14 +75,9 @@ public class User {
         this.password = password;
     }
 
-    public OrcamentoRequest getOrcamentoRequest() {
-        return orcamentoRequest;
+    public List<BudgetRequest> getOrcamentoRequest() {
+        return budgetRequest;
     }
-
-    public void setOrcamentoRequest(OrcamentoRequest orcamentoRequest) {
-        this.orcamentoRequest = orcamentoRequest;
-    }
-
     public int getPhoneNumber() {
         return phoneNumber;
     }
