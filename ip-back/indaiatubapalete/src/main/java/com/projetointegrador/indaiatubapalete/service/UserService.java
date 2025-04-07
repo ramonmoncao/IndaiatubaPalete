@@ -11,6 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -28,6 +30,15 @@ public class UserService {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
+        return UserMapper.toResponse(user);
+    }
+    public List<UserResponseDTO> getAllUsers(){
+        List<User> users = userRepository.findAll();
+        return UserMapper.toResponseList(users);
+    }
+    public UserResponseDTO getUserById(Long id){
+        User user = userRepository.findById(id)
+                .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return UserMapper.toResponse(user);
     }
 }

@@ -5,6 +5,9 @@ import com.projetointegrador.indaiatubapalete.dto.response.UserResponseDTO;
 import com.projetointegrador.indaiatubapalete.entity.User;
 import com.projetointegrador.indaiatubapalete.entity.UserType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserMapper {
 
     public static User createToEntity(UserCreateRequestDTO userCreateRequestDTO) {
@@ -26,5 +29,12 @@ public class UserMapper {
                 user.getOrcamentoRequest() != null ?
                         user.getOrcamentoRequest().getId() : null
         );
+    }
+    public static List<UserResponseDTO> toResponseList(List<User> users) {
+        List<UserResponseDTO> userResponseDTOs = new ArrayList<>();
+        for (User user : users) {
+            userResponseDTOs.add(toResponse(user));
+        }
+        return userResponseDTOs;
     }
 }

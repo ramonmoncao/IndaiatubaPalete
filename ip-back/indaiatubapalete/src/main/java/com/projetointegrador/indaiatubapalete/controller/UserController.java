@@ -6,6 +6,8 @@ import com.projetointegrador.indaiatubapalete.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/users")
 public class UserController {
@@ -19,5 +21,17 @@ public class UserController {
     @ResponseBody
     public UserResponseDTO createUser(@RequestBody UserCreateRequestDTO userCreateRequestDTO) {
         return userService.createUser(userCreateRequestDTO);
+    }
+
+    @GetMapping
+    @ResponseBody
+    public List<UserResponseDTO> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
+    @GetMapping("/{id}")
+    @ResponseBody
+    public UserResponseDTO getUserById(@PathVariable Long id) {
+        return userService.getUserById(id);
     }
 }
