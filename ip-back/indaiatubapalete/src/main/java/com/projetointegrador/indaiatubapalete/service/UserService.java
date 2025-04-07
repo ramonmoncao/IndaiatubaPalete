@@ -22,7 +22,7 @@ public class UserService {
 
     public UserResponseDTO createUser(UserCreateRequestDTO userCreateRequestDTO){
         if(userRepository.findByEmail(userCreateRequestDTO.email()).isPresent()){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Email em uso");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Email já em uso");
         }
         User user = UserMapper.createToEntity(userCreateRequestDTO);
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
