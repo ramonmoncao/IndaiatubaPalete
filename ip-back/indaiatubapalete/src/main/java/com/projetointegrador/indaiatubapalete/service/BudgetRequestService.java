@@ -1,15 +1,17 @@
 package com.projetointegrador.indaiatubapalete.service;
 
-import com.projetointegrador.indaiatubapalete.dto.request.SubTotalDTO;
+import com.projetointegrador.indaiatubapalete.dto.request.SubTotalRequestDTO;
 import com.projetointegrador.indaiatubapalete.dto.response.BudgetResponseDTO;
 import com.projetointegrador.indaiatubapalete.entity.*;
+import com.projetointegrador.indaiatubapalete.execptionHandler.BudgetException;
+import com.projetointegrador.indaiatubapalete.execptionHandler.ProductException;
+import com.projetointegrador.indaiatubapalete.execptionHandler.UserException;
 import com.projetointegrador.indaiatubapalete.mapper.BudgetRequestMapper;
 import com.projetointegrador.indaiatubapalete.repository.BudgetRequestRepository;
 import com.projetointegrador.indaiatubapalete.repository.ProductRepository;
 import com.projetointegrador.indaiatubapalete.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -26,15 +28,15 @@ public class BudgetRequestService {
         this.productRepository = productRepository;
     }
 
-    public BudgetResponseDTO createBudgetRequest(Long userId, List<SubTotalDTO> subTotalsDTOs) {
+    public BudgetResponseDTO createBudgetRequest(Long userId, List<SubTotalRequestDTO> subTotalsDTOs) {
         User user = userRepository .findById(userId)
-                .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"User not found"));
+                .orElseThrow(()-> new BudgetException(HttpStatus.NOT_FOUND, "User not found."));
 
         List<SubTotal> subTotals = subTotalsDTOs.stream().map(dto -> {
             SubTotal subTotal = new SubTotal();
             subTotal.setQuantity(dto.quantity());
             Product product = productRepository.findById(dto.productId())
-                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
+                    .orElseThrow(() -> new BudgetException(HttpStatus.NOT_FOUND, "Product not found."));
             subTotal.setProduct(product);
 
             return subTotal;
@@ -57,7 +59,7 @@ public class BudgetRequestService {
 
     public BudgetResponseDTO getBudgetRequestById(Long id) {
         BudgetRequest budgetRequest = budgetRequestRepository.findById(id)
-                .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Budget request not found"));
+                .orElseThrow(()->new BudgetException(HttpStatus.NOT_FOUND, "Budget request not found."));
         return BudgetRequestMapper.toResponseDTO(budgetRequest);
     }
 }

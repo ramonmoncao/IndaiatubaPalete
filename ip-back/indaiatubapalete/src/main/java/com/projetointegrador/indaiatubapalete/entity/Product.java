@@ -27,7 +27,7 @@ public class Product {
         return productType;
     }
 
-    public void setProductClass(ProductType productType) {
+    public void setProductType(ProductType productType) {
         this.productType = productType;
     }
 

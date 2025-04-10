@@ -1,9 +1,7 @@
 package com.projetointegrador.indaiatubapalete.dto.request;
 
-public record UserCreateRequestDTO(
-        String email,
+public record UserUpdateRequestDTO (
         String name,
-        String password,
         Integer phone
 ) {
 }

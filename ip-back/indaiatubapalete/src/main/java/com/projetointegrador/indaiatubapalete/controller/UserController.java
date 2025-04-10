@@ -1,11 +1,15 @@
 package com.projetointegrador.indaiatubapalete.controller;
 
 import com.projetointegrador.indaiatubapalete.dto.request.UserCreateRequestDTO;
+import com.projetointegrador.indaiatubapalete.dto.request.UserUpdateRequestDTO;
 import com.projetointegrador.indaiatubapalete.dto.response.UserResponseDTO;
+import com.projetointegrador.indaiatubapalete.execptionHandler.UserException;
 import com.projetointegrador.indaiatubapalete.service.UserService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @Controller
@@ -17,21 +21,28 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
-    @ResponseBody
-    public UserResponseDTO createUser(@RequestBody UserCreateRequestDTO userCreateRequestDTO) {
-        return userService.createUser(userCreateRequestDTO);
-    }
 
     @GetMapping
-    @ResponseBody
-    public List<UserResponseDTO> getAllUsers() {
-        return userService.getAllUsers();
+    public ResponseEntity<List<UserResponseDTO>> getAllUsers() {
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @GetMapping("/{id}")
-    @ResponseBody
-    public UserResponseDTO getUserById(@PathVariable Long id) {
-        return userService.getUserById(id);
+    public ResponseEntity<UserResponseDTO> getUserById(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(userService.getUserById(id));
+        }
+        catch (UserException e){
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<UserResponseDTO> updateUser(@PathVariable Long id, @RequestBody UserUpdateRequestDTO userUpdateRequestDTO) {
+        try{
+            return ResponseEntity.ok(userService.updateUser(id, userUpdateRequestDTO));
+        }
+        catch (UserException e){
+            return ResponseEntity.notFound().build();
+        }
     }
 }

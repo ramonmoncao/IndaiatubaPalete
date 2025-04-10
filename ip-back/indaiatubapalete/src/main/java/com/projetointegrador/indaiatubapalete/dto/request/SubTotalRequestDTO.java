@@ -1,6 +1,6 @@
 package com.projetointegrador.indaiatubapalete.dto.request;
 
-public record SubTotalDTO(
+public record SubTotalRequestDTO(
         Long productId,
         int quantity
 ) {

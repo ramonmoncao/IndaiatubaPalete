@@ -3,9 +3,11 @@ package com.projetointegrador.indaiatubapalete.controller;
 import com.projetointegrador.indaiatubapalete.dto.request.ProductCreateRequestDTO;
 import com.projetointegrador.indaiatubapalete.dto.response.ProductResponseDTO;
 import com.projetointegrador.indaiatubapalete.service.ProductService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @Controller
@@ -19,20 +21,19 @@ public class ProductController {
     }
 
     @PostMapping
-    @ResponseBody
-    public ProductResponseDTO createProduct(@RequestBody ProductCreateRequestDTO productCreateRequestDTO) {
-        return productService.createProduct(productCreateRequestDTO);
+    public ResponseEntity<ProductResponseDTO> createProduct(@RequestBody ProductCreateRequestDTO productCreateRequestDTO) {
+        ProductResponseDTO createdProduct = productService.createProduct(productCreateRequestDTO);
+        URI location = URI.create("/product/" + createdProduct.id());
+        return ResponseEntity.created(location).body(createdProduct);
     }
 
     @GetMapping
-    @ResponseBody
-    public List<ProductResponseDTO> getAllProducts() {
-        return productService.getAllProducts();
+    public ResponseEntity<List<ProductResponseDTO>> getAllProducts() {
+        return ResponseEntity.ok(productService.getAllProducts());
     }
     @GetMapping("/{id}")
-    @ResponseBody
-    public ProductResponseDTO getProductById(@PathVariable Long id) {
-        return productService.getProductById(id);
+    public ResponseEntity<ProductResponseDTO> getProductById(@PathVariable Long id) {
+        return ResponseEntity.ok(productService.getProductById(id));
     }
 
 }

@@ -1,6 +1,7 @@
 package com.projetointegrador.indaiatubapalete.mapper;
 
 import com.projetointegrador.indaiatubapalete.dto.request.UserCreateRequestDTO;
+import com.projetointegrador.indaiatubapalete.dto.request.UserUpdateRequestDTO;
 import com.projetointegrador.indaiatubapalete.dto.response.UserResponseDTO;
 import com.projetointegrador.indaiatubapalete.entity.User;
 import com.projetointegrador.indaiatubapalete.entity.UserType;
@@ -34,5 +35,14 @@ public class UserMapper {
             userResponseDTOs.add(toResponseDTO(user));
         }
         return userResponseDTOs;
+    }
+
+    public static void update(User user, UserUpdateRequestDTO userUpdateRequestDTO) {
+        if(userUpdateRequestDTO.name() != null) {
+            user.setName(userUpdateRequestDTO.name());
+        }
+        if(userUpdateRequestDTO.phone() != null){
+            user.setPhoneNumber(userUpdateRequestDTO.phone());
+        }
     }
 }
