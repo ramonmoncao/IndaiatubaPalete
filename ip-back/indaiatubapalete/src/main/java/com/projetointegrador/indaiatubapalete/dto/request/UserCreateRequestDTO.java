@@ -4,6 +4,6 @@ public record UserCreateRequestDTO(
         String email,
         String name,
         String password,
-        Integer phone
+        String phone
 ) {
 }

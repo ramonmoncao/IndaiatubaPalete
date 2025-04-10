@@ -17,10 +17,10 @@ public class User {
     @OneToMany(mappedBy = "user")
     @JsonIgnore
     private List<BudgetRequest> budgetRequest;
-    private Integer phoneNumber;
+    private String phoneNumber;
     private UserType userType;
 
-    public User(String email, String name, String password, Integer phoneNumber, UserType userType) {
+    public User(String email, String name, String password, String phoneNumber, UserType userType) {
         this.email = email;
         this.name = name;
         this.password = password;
@@ -31,7 +31,7 @@ public class User {
     public User() {
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -78,7 +78,7 @@ public class User {
     public List<BudgetRequest> getOrcamentoRequest() {
         return budgetRequest;
     }
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 }

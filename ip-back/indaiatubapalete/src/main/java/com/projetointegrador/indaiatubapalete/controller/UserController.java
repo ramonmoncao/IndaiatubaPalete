@@ -38,11 +38,6 @@ public class UserController {
     }
     @PutMapping("/{id}")
     public ResponseEntity<UserResponseDTO> updateUser(@PathVariable Long id, @RequestBody UserUpdateRequestDTO userUpdateRequestDTO) {
-        try{
             return ResponseEntity.ok(userService.updateUser(id, userUpdateRequestDTO));
-        }
-        catch (UserException e){
-            return ResponseEntity.notFound().build();
-        }
     }
 }

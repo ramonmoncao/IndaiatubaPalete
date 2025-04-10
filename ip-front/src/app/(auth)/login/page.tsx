@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import './login.css';
+import LoginForm from './loginForm';
 export const metadata: Metadata = {
     title: "Login"
 }
@@ -18,21 +19,9 @@ export default function Login(){
                 <div className = "box">
                 <h1>Olá!</h1>
                 <h2>Seja bem vindo novamente.</h2>
-                    <form className ="form">
-                        <div className='input-group'>
-                        <label>Usuário</label>
-                        <input></input>
-                        <div id='line'></div>
-                        </div>
-                        <div className='input-group'>
-                        <label>Senha</label>
-                        <input type='password'></input>
-                        <div id='line'></div>
-                        </div>
-                        <button className="sendbtn">login</button>
-                    </form>
+                    <LoginForm/>
                     <div className="options">
-                        <p>novo por aqui? <Link className="link" href={"/signup"}>registre-se</Link></p>
+                        <p>novo por aqui? <Link className="link" href={"/register"}>registre-se</Link></p>
                         <Link className="link" href={"/password/recovery"}><p>esqueci minha senha.</p></Link>
                     </div>
                 </div>
