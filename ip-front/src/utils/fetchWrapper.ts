@@ -26,7 +26,8 @@ export async function fetchWrapper<T>(endpoint: string, options: RequestInit = {
             try {
                 const errorData = await response.json();
                 errorMessage = errorData.message || errorMessage;
-            } catch (_) {
+            } catch (error) {
+                throw error
             }
             throw new Error(errorMessage);
         }

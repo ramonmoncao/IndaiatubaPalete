@@ -28,7 +28,7 @@ export default function RegisterForm() {
         alert("Usuário registrado com sucesso!");
         router.push("/login");
         } catch (error) {
-            
+            console.log(error);
         }
     };
 

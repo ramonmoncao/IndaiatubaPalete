@@ -28,7 +28,8 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .cors(cors -> cors.configurationSource(corsConfigurationSource))
-                .headers(headers -> headers.disable()); // Desativa restrições extras como X-Frame-Options
+                .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()));
+
 
         return http.build();
     }
