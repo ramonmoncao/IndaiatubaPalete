@@ -1,5 +1,6 @@
 'use client';
 
+import { Bebas_Neue } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
@@ -9,6 +10,12 @@ import './catalog.css';
 import './contact.css';
 import './header.css';
 import './home.css';
+
+const bebasNeue = Bebas_Neue({
+  subsets: ['latin'],
+  weight: '400',
+});
+
 
 export default function Home() {
     useEffect(() => {
@@ -82,7 +89,7 @@ export default function Home() {
                 <section id="home" ref={homeSection}>
                     <div id="home-div">
                         <Image src="/ipicon.png" alt="Logo" width={60} height={60} style={{ filter: 'brightness(1000%)' }} />
-                        <h1 id="title">SEGURANÇA EM CADA<br /><span>CARGA.</span></h1>
+                        <h1 id="title" className={bebasNeue.className}>SEGURANÇA EM CADA<br /><span>CARGA.</span></h1>
                         <h1 id="subtitle">Paletes de alta qualidade para transporte seguro e eficiente.</h1>
                         <div id="btn"><button id="btn-home">Faça seu orçamento agora →</button></div>
                     </div>
@@ -90,7 +97,7 @@ export default function Home() {
 
                 <section id="about" ref={aboutSection}>
                     <div id="about-div">
-                        <h1>Sobre nós</h1>
+                        <h1 className={bebasNeue.className}>Sobre nós</h1>
                         <div id="about-grid">
                             <div id="about-img">
                                 <Image src="/Roberto.jpg" alt="Roberto Rosa Silva" width={300} height={200} />
@@ -105,12 +112,12 @@ export default function Home() {
 
                 <section id="catalog" ref={catalogSection}>
                     <div id='catalog-div'>
-                        <h1>Nossos produtos</h1>
+                        <h1 className={bebasNeue.className}>Nossos produtos</h1>
                         <div id="container">
                             <div className="item" key="paletes-madeira">
                                 <Image src="/Roberto.jpg" alt="Paletes de madeira" width={300} height={200} />
                                 <div className="description">
-                                    <h3>Paletes de madeira</h3>
+                                    <h3 className={bebasNeue.className}>Paletes de madeira</h3>
                                     <h2>Os paletes de madeira são plataformas robustas, projetadas para armazenar, organizar
                                     e transportar cargas com eficiência. Sua resistência e praticidade fazem delas uma solução econômica e sustentável para diversas aplicações.</h2>
                                 </div>
@@ -118,7 +125,7 @@ export default function Home() {
                             <div className="item" key="paletes-plastico">
                                 <Image src="/Roberto.jpg" alt="Paletes de plástico" width={300} height={200} />
                                 <div className="description">
-                                    <h3>Paletes de plástico</h3>
+                                    <h3 className={bebasNeue.className}>Paletes de plástico</h3>
                                     <h2>Os paletes de plástico são plataformas leves, duráveis e resistentes à umidade,
                                     projetadas para facilitar o transporte, armazenamento e organização de mercadorias.
                                     Ideais para setores que exigem alta higiene e longa vida útil.</h2>
@@ -127,7 +134,7 @@ export default function Home() {
                             <div className="item" key="chapatex">
                                 <Image src="/Roberto.jpg" alt="Chapatex" width={300} height={200} />
                                 <div className="description">
-                                    <h3>Chapatex</h3>
+                                    <h3 className={bebasNeue.className}>Chapatex</h3>
                                     <h2>O chapatex é um material versátil e econômico, amplamente utilizado na fabricação de
                                     móveis, embalagens, revestimentos e projetos de design. Oferecendo resistência, leveza e uma superfície uniforme.</h2>
                                 </div>
