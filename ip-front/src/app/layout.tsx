@@ -53,20 +53,8 @@ export default function RootLayout({
                   <Image src="/ipicon.png" id= "logoip" alt="LogoIP" width={100} height={100} style={{ filter: 'brightness(1000%)' }}/>
                   &copy; Indaiatuba Palete 2025 - Todos os direitos reservados
               </div>
-              <ul id="footer_list">
-                  <li>
-                      <a href="/home#home">•Início</a>
-                  </li>
-                  <li>
-                      <a href="/home#about">•Sobre nós</a>
-                  </li>
-                  <li>
-                      <a href="/home#catalog">•Catálogo</a>
-                  </li>
-              </ul>
               <div id="footer-contents">
                   <h2>Indaiatuba palete</h2>
-                  <h1>endereço aqui</h1>
 
                   <h1><strong>Fale conosco:</strong> +55 (19) 991328457 </h1>
 
