@@ -24,9 +24,6 @@ export default function BudgetForm() {
     const [quantity, setQuantity] = useState<number>(1);
     const [productList, setProductList] = useState<ProductList>([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [form, setForm] = useState({
-        products: [] as ProductList
-    });
 
     const id = 1;
     const router = useRouter();
@@ -34,7 +31,7 @@ export default function BudgetForm() {
     useEffect(() => {
         const loadProducts = async () => {
             try {
-                const data = await fetchWrapper("/products", {
+                const data = await fetchWrapper<Product[]>("/products", {
                     method: "GET"
                 });
                 setProducts(data);
@@ -47,10 +44,6 @@ export default function BudgetForm() {
         
         loadProducts();
     }, []);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
 
     const handleAddProduct = (e: React.FormEvent) => {
         e.preventDefault();
