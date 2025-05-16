@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87682e5-c0c7-48f1-8857-b519571fdab5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/IndaiatubaPalete.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indaiatubapalete.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-back/indaiatubapalete/src/main/java/com/projetointegrador/indaiatubapalete/configuration/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-back/indaiatubapalete/src/main/java/com/projetointegrador/indaiatubapalete/configuration/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-front/src/app/(auth)/register/registrationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ip-front/src/app/(auth)/register/registrationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-front/src/utils/fetchWrapper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ip-front/src/utils/fetchWrapper.ts" afterDir="false" />
-    </list>
+    <list default="true" id="d87682e5-c0c7-48f1-8857-b519571fdab5" name="Changes" comment="Release V1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,17 +34,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;frontend-ramon&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ramon/OneDrive/Documentos/Github/IndaiatubaPalete&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Unnamed.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Ramon/OneDrive/Documentos/Github/IndaiatubaPalete"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../../Program Files/Java/jdk-21" />
@@ -78,6 +66,20 @@
       <option name="presentableId" value="Default" />
       <updated>1744629388365</updated>
     </task>
+    <task id="LOCAL-00001" summary="Release V1">
+      <option name="closed" value="true" />
+      <created>1747395706133</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747395706133</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge branch 'Release/v1'&#10;&#10;# Conflicts:&#10;#&#9;ip-back/indaiatubapalete/src/main/java/com/projetointegrador/indaiatubapalete/entity/User.java" />
+    <MESSAGE value="Release V1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Release V1" />
   </component>
 </project>
