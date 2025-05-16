@@ -34,7 +34,7 @@ export default function ProductManagementPage() {
 
     const loadProducts = async () => {
         try {
-            const data = await fetchWrapper("/products", { method: "GET" });
+            const data = await fetchWrapper<Product[]>("/products", { method: "GET" });
             setProducts(data);
             setIsLoading(false);
         } catch (error) {
