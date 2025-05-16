@@ -36,4 +36,10 @@ public class ProductService {
             .orElseThrow(()->new ProductException(HttpStatus.NOT_FOUND, "Product not found."));
         return ProductMapper.toResponseDTO(product);
     }
+
+    public void deleteProductById(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(()->new ProductException(HttpStatus.NOT_FOUND, "Product not found."));
+        productRepository.delete(product);
+    }
 }

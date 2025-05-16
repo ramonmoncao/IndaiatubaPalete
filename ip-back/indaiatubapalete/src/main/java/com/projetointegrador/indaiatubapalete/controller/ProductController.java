@@ -61,4 +61,16 @@ public class ProductController {
     public ResponseEntity<ProductResponseDTO> getProductById(@PathVariable Long id) {
         return ResponseEntity.ok(productService.getProductById(id));
     }
+
+    /**
+     *Deleta um produto por um id
+     *
+     * @param id ID do produto a ser deletado
+     * @return um Response Entity de ok se bem sucedido
+     */
+    @DeleteMapping("/{id}")
+    public ResponseEntity deletProductById(@PathVariable Long id){
+        productService.deleteProductById(id);
+        return  ResponseEntity.ok().body("Produto removido com sucesso");
+    }
 }
