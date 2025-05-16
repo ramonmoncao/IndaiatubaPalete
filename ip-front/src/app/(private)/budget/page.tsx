@@ -21,14 +21,14 @@ export default function ProductForm() {
   const [quantity, setQuantity] = useState<number>(1);
   const [productList, setProductList] = useState<ProductItem[]>([]);
 
-  // Busca produtos da API ao carregar o componente
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const data = await fetchWrapper("/products", {
           method: "GET"
         });
-        setProducts(data);
+        setProducts(data as Product[]);
       } catch (error) {
         console.error("Erro ao buscar produtos:", error);
       }
@@ -51,7 +51,6 @@ export default function ProductForm() {
       quantity: quantity
     }]);
 
-    // Reset form
     setSelectedProduct("");
     setQuantity(1);
   };

@@ -26,21 +26,11 @@ export default function Home() {
     const homeSection = useRef<HTMLDivElement | null>(null);
 
     const [activeSection, setActiveSection] = useState('home');
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement | null>, sectionName: string) => {
         if (sectionRef.current) {
             sectionRef.current.scrollIntoView({ behavior: 'smooth' });
         }
         setActiveSection(sectionName);
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!formData.name || !formData.email || !formData.message) {
-            alert('Por favor, preencha todos os campos.');
-            return;
-        }
-        console.log(formData);
     };
 
     useEffect(() => {
@@ -90,7 +80,7 @@ export default function Home() {
                         <Image src="/ipicon.png" alt="Logo" width={60} height={60} style={{ filter: 'brightness(1000%)' }} />
                         <h1 id="title" className={bebasNeue.className}>SEGURANÇA EM CADA<br /><span>CARGA.</span></h1>
                         <h1 id="subtitle">Paletes de alta qualidade para transporte seguro e eficiente.</h1>
-                        <div id="btn"><button id="btn-home">Faça seu orçamento agora →</button></div>
+                        <Link href={'/budget'}><div id="btn"><button id="btn-home">Faça seu orçamento agora →</button></div></Link>
                     </div>
                 </section>
 
@@ -147,7 +137,7 @@ export default function Home() {
                     <div id='contact-div'>
                         <h1 id="title" className={bebasNeue.className}>VENHA AGORA FAZER SEU ORÇAMENTO<br /><span>COM A INDAIATUBA PALETE.</span></h1>
                         <h1 id="subtitle">os melhores paletes para suas necessidades.</h1>
-                        <div id="btn"><button id="btn-home">Faça seu orçamento agora →</button></div>
+                        <Link href={'/budget'}><div id="btn"><button id="btn-home">Faça seu orçamento agora →</button></div></Link>
                     </div>
                 </section>
             </main>
