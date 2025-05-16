@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
         {
             source: '/',
             destination: '/home',
-            permanent: true, // Use true para redirecionamento 308 permanente
+            permanent: true,
         },
     ];
 },

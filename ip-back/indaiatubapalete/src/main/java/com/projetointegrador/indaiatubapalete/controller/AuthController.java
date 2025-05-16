@@ -53,13 +53,8 @@ public class AuthController {
      */
     @PostMapping("/register")
     public ResponseEntity<UserResponseDTO> register(@RequestBody UserCreateRequestDTO userCreateRequestDTO) {
-        try {
             UserResponseDTO createdUser = authService.register(userCreateRequestDTO);
             URI location = URI.create("/user/" + createdUser.id());
             return ResponseEntity.created(location).body(createdUser);
-        }
-        catch (UserException e){
-            return ResponseEntity.badRequest().build();
-        }
     }
 }

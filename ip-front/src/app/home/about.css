@@ -43,13 +43,14 @@
     height: auto; /* Altura baseada no conteúdo */
     min-height: 300px; /* Altura mínima fixa */
     align-content: center;
-    padding: 2rem; /* Padding fixo em rem */
+    padding: 5rem; /* Padding fixo em rem */
     border-radius: 0 200px 0 200px; /* Valores fixos em px */
     background-color: var(--color-primary-3);
     align-items: center;
+    text-align: justify;
     justify-content: center;
     color: var(--color-primary-1);
-    font-size: 1.2rem; /* Tamanho fixo em rem */
+    font-size: 1.45rem; /* Tamanho fixo em rem */
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -63,7 +64,7 @@
     align-items: center;
     justify-content: center;
     color: var(--color-primary-1);
-    font-size: 1.5rem; /* Tamanho fixo em rem */
+    font-size: 1.5rem;
     max-width: 90%;
     box-sizing: border-box;
 }
@@ -90,6 +91,7 @@
         min-height: 200px; /* Altura mínima fixa */
         padding: 1.5rem; /* Padding fixo em rem */
         border-radius: 0 0 0 30px; /* Valores fixos em px */
+        font-size: 1.2rem;
     }
 
     #about-img {

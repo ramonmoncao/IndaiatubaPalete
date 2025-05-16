@@ -25,7 +25,6 @@ public class User {
     @OneToMany(mappedBy = "user")
     @JsonIgnore
     private List<BudgetRequest> budgetRequest;
-
     private Integer phoneNumber;
 
     private UserType userType;
@@ -40,6 +39,11 @@ public class User {
      * @param userType Tipo do usuário.
      */
     public User(String email, String name, String password, Integer phoneNumber, UserType userType) {
+    private String phoneNumber;
+    private UserType userType;
+
+    public User(String email, String name, String password, String phoneNumber, UserType userType) {
+
         this.email = email;
         this.name = name;
         this.password = password;
@@ -58,6 +62,18 @@ public class User {
      *
      * @return ID do usuário.
      */
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
     public Long getId() {
         return id;
     }
@@ -140,6 +156,7 @@ public class User {
      * @return Número de telefone do usuário.
      */
     public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
