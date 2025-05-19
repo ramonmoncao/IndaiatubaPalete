@@ -1,6 +1,7 @@
-const baseUrl: string = "http://localhost:8080";
 
+const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 export async function fetchWrapper<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+    console.log(baseUrl)
     try {
         const response = await fetch(`${baseUrl}${endpoint}`, {
             credentials: "include",

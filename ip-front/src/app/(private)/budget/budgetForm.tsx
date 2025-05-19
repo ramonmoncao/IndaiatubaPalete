@@ -127,7 +127,7 @@ export default function BudgetForm() {
                                     <option value="">Selecione um produto</option>
                                     {products.map((product) => (
                                         <option key={product.id} value={product.id}>
-                                            {product.type}-{product.name}
+                                            {product.type}-{product.name}-{product.description}
                                         </option>
                                     ))}
                                 </select>
