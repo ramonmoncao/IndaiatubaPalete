@@ -8,7 +8,7 @@ export async function middleware(request: NextRequest) {
     const authPaths = ['/login'];
 
     if (protectedPaths.some(p => path.startsWith(p))) {
-        const token = request.cookies.get('auth-token')?.value;
+        const token = request.cookies.get(' -token')?.value;
 
         if (!token) {
             const loginUrl = new URL('/login', request.url);
@@ -32,6 +32,7 @@ export async function middleware(request: NextRequest) {
             }
 
         } catch (error) {
+            console.log(error)
             const loginUrl = new URL('/login', request.url);
             loginUrl.searchParams.set('redirect', path);
             const response = NextResponse.redirect(loginUrl);
