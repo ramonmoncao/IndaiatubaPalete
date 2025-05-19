@@ -1,6 +1,7 @@
 "use client";
 
 import { fetchWrapper } from "@/utils/fetchWrapper";
+import PrivateRoute from "@/utils/PrivateRoute";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -75,6 +76,7 @@ export default function ProductManagementPage() {
 
     return (
         <>
+        <PrivateRoute requiredUserType="ADMIN">
         <header className='header'>
             <Link href={'/home'}><Image src="/ipicon.png" alt="Palete" width={100} height={100} style={{filter : 'brightness(1000%)'}} /></Link>
         </header>
@@ -168,6 +170,7 @@ export default function ProductManagementPage() {
             </div>
         </section>
         </main>
+    </PrivateRoute>
     </>
     );
 }
