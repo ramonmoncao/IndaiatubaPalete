@@ -6,18 +6,14 @@
   --background: #ffffff;
   --foreground: #171717;
   --footer-height: 60px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
     --color-primary-1 : #E0F2E9;/*rgb(224, 242, 233)*/
     --color-primary-2 : #A6C3F2; /*rgb(166, 196, 242)*/
     --color-primary-3 : #3B7BE3;/*rgb(59, 123, 227)*/
     --color-primary-4 : #296FE0;/*rgb(41, 111, 224)*/
     --color-primary-5 : #0A2247; /*rgb(10, 34, 71)*/
     --color-primary-6 : #000000;
-  }
 }
+
 
 body {
   color: var(--foreground);
