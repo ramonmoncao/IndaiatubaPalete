@@ -64,14 +64,12 @@ html{
 .box {
   display: flex;
   background-color: var(--color-primary-1);
-  max-width: 500px;
-  width: 100%;
+  width: 40%;
   padding: 40px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  max-height: 80vh;
   overflow: hidden;
   border-radius: 20px;
 }
@@ -105,19 +103,20 @@ html{
   justify-content: center;
 }
 
+
 .sendbtn{
-  background-color: var(--color-primary-5);
+  background-color: var(--color-primary-3);
   color: var(--color-primary-1);
   border-radius: 20px;
   padding:10px 20%;
   border-width: 10px;
   border-color: transparent;
-  transition: transform 0.3s ease;
 }
 
 .sendbtn:hover{
-  transform: scale(1.1);
+  background-color: var(--color-primary-5);
 }
+
 /*formularios*/
 .form {
   display: flex;
@@ -170,4 +169,9 @@ html{
   #logoip{
     width: 50px;
   }
+}
+.input-group select:focus ~ #line,
+.input-group input[type]:focus ~ #line {
+    background:var(--color-primary-3); 
+    height: 2px;
 }
