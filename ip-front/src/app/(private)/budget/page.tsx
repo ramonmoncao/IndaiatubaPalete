@@ -7,7 +7,15 @@ import BudgetForm from './budgetForm';
 export const metadata: Metadata = {
     title: "budget"
 }
-export default function budget(){
+
+interface BudgetProps {
+    params: {
+        id: string;
+    }
+}
+
+export default function budget({ params }: BudgetProps){
+    const userId = params.id;
 
     return(
         <>
@@ -16,7 +24,7 @@ export default function budget(){
             <Link href={'/home'}><Image src="/ipicon.png" alt="Palete" width={100} height={100} style={{filter : 'brightness(1000%)'}} /></Link>
         </header>
         <main>
-                <BudgetForm/>
+                <BudgetForm userId={userId}/>
         </main>
         </PrivateRoute>
         </>

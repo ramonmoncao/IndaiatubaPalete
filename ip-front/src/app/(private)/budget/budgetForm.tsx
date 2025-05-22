@@ -17,15 +17,18 @@ interface ProductItem {
 }
 
 type ProductList = ProductItem[];
+interface BudgetFormProps {
+    userId: string;
+}
 
-export default function BudgetForm() {
+export default function BudgetForm({ userId }: BudgetFormProps) {
     const [products, setProducts] = useState<Product[]>([]);
     const [selectedProduct, setSelectedProduct] = useState<number | "">("");
     const [quantity, setQuantity] = useState<number>(1);
     const [productList, setProductList] = useState<ProductList>([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const id = 1;
+    const id = parseInt(userId);
     const router = useRouter();
 
     useEffect(() => {

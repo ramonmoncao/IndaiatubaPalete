@@ -33,6 +33,7 @@ export default function LoginForm() {
 
             const decoded = parseJwt(token);
             const userType = decoded?.UserType;
+            const id = decoded?.UserId;
 
             let targetPath = "/";
 
@@ -41,7 +42,7 @@ export default function LoginForm() {
             } else if (userType === "ADMIN") {
                 targetPath = "/products";
             } else if (userType === "CLIENT") {
-                targetPath = "/budget";
+                targetPath = `/budget/${id}`;
             }
 
             router.push(targetPath);
