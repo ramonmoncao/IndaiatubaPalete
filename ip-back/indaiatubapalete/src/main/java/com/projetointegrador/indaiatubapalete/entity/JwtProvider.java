@@ -45,6 +45,7 @@ public class JwtProvider {
         return Jwts.builder()
                 .setSubject(email)
                 .claim("UserType", user.getUserType())
+                .claim("Id",user.getId())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(SignatureAlgorithm.HS512, SECRET)

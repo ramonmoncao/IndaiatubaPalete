@@ -14,7 +14,11 @@ export default function PrivateRoute({ children, requiredUserType }: PrivateRout
         const checkAuth = () => {
             try {
 
-                const token = document.cookie.split('; ').find(row => row.startsWith('auth-token='))?.split('=')[1];
+                const token = decodeURIComponent(document.cookie
+                    .split("; ")
+                    .find((row) => row.startsWith("auth-token="))
+                    ?.split("=")[1] || "");
+
                 if (!token) {
                     router.push("/login");
                     return;
