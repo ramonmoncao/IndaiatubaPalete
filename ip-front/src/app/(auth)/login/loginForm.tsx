@@ -29,11 +29,12 @@ export default function LoginForm() {
             });
 
             const token = data.token;
-            document.cookie = `auth-token=${token}; path=/`;
+            document.cookie = `auth-token=${encodeURIComponent(data.token)}; path=/; max-age=86400`;
+            console.log("TOKEN DO BACKEND:", data.token);
 
             const decoded = parseJwt(token);
             const userType = decoded?.UserType;
-            const id = decoded?.UserId;
+            
 
             let targetPath = "/";
 
@@ -42,7 +43,7 @@ export default function LoginForm() {
             } else if (userType === "ADMIN") {
                 targetPath = "/products";
             } else if (userType === "CLIENT") {
-                targetPath = `/budget/${id}`;
+                targetPath = `/budget/`;
             }
 
             router.push(targetPath);

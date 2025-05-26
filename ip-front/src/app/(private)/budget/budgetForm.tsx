@@ -1,5 +1,6 @@
 "use client";
 import { fetchWrapper } from "@/utils/fetchWrapper";
+import { parseJwt } from "@/utils/jwt";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -17,18 +18,26 @@ interface ProductItem {
 }
 
 type ProductList = ProductItem[];
-interface BudgetFormProps {
-    userId: string;
-}
 
-export default function BudgetForm({ userId }: BudgetFormProps) {
+export default function BudgetForm() {
     const [products, setProducts] = useState<Product[]>([]);
     const [selectedProduct, setSelectedProduct] = useState<number | "">("");
     const [quantity, setQuantity] = useState<number>(1);
     const [productList, setProductList] = useState<ProductList>([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [Id, setId] = useState<string | null>(null);
 
-    const id = parseInt(userId);
+    useEffect(() => {
+        const token = decodeURIComponent(document.cookie
+            .split("; ")
+            .find((row) => row.startsWith("auth-token="))
+            ?.split("=")[1] || "");
+
+
+        const decodedToken = parseJwt(token || "");
+        setId(decodedToken?.Id ?? null);
+    }, []);
+
     const router = useRouter();
 
     useEffect(() => {
@@ -44,25 +53,25 @@ export default function BudgetForm({ userId }: BudgetFormProps) {
                 setIsLoading(false);
             }
         };
-        
+
         loadProducts();
     }, []);
 
     const handleAddProduct = (e: React.FormEvent) => {
         e.preventDefault();
-        
+
         if (selectedProduct === "" || quantity < 1) return;
-        
+
         const productToAdd = products.find(p => p.id === selectedProduct);
-        
+
         if (!productToAdd) return;
-        
+
         const existingProductIndex = productList.findIndex(
             item => item.productId === selectedProduct
         );
-        
+
         if (existingProductIndex >= 0) {
-            
+
             const updatedList = [...productList];
             updatedList[existingProductIndex].quantity += quantity;
             setProductList(updatedList);
@@ -76,7 +85,7 @@ export default function BudgetForm({ userId }: BudgetFormProps) {
                 }
             ]);
         }
-        
+
         setSelectedProduct("");
         setQuantity(1);
     };
@@ -88,17 +97,17 @@ export default function BudgetForm({ userId }: BudgetFormProps) {
     const handleSubmitBudget = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            
+
             const payload = productList.map(item => ({
-                productId: item.productId,  
+                productId: item.productId,
                 quantity: item.quantity,
             }));
 
 
-            await fetchWrapper(`/budgets/user/${id}`, {
+            await fetchWrapper(`/budgets/user/${Id}`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json", 
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(payload),
             });
@@ -108,7 +117,7 @@ export default function BudgetForm({ userId }: BudgetFormProps) {
             alert("Error submitting budget. Check console for details.");
         }
     };
-        
+
 
     return (
         <section id="budget">
@@ -171,8 +180,8 @@ export default function BudgetForm({ userId }: BudgetFormProps) {
                                             <td>{item.productDetails?.type || "-"}</td>
                                             <td>{item.quantity}</td>
                                             <td>
-                                                <button 
-                                                    type="button" 
+                                                <button
+                                                    type="button"
                                                     onClick={() => handleRemoveProduct(item.productId)}
                                                     className="remove-btn"
                                                 >
@@ -183,8 +192,8 @@ export default function BudgetForm({ userId }: BudgetFormProps) {
                                     ))}
                                 </tbody>
                             </table>
-                            <button 
-                                type="button" 
+                            <button
+                                type="button"
                                 onClick={handleSubmitBudget}
                                 className="sendbtn"
                             >
