@@ -53,13 +53,22 @@ public class BudgetRequestService {
     }
 
     public List<BudgetResponseDTO> getAllBudgetRequests() {
-        List<BudgetRequest> budgetRequests = budgetRequestRepository.findAll();
+        List<BudgetRequest> budgetRequests = budgetRequestRepository
+                .getBudgets(BudgetRequestStatus.PENDING);
         return BudgetRequestMapper.toResponseDTO(budgetRequests);
     }
 
     public BudgetResponseDTO getBudgetRequestById(Long id) {
         BudgetRequest budgetRequest = budgetRequestRepository.findById(id)
                 .orElseThrow(()->new BudgetException(HttpStatus.NOT_FOUND, "Budget request not found."));
+        return BudgetRequestMapper.toResponseDTO(budgetRequest);
+    }
+
+    public BudgetResponseDTO resolveBudget(Long id) {
+        BudgetRequest budgetRequest = budgetRequestRepository.findById(id)
+                .orElseThrow(()->new BudgetException(HttpStatus.NOT_FOUND, "Budget request not found."));
+        budgetRequest.setStatus(BudgetRequestStatus.RESOLVED);
+        budgetRequestRepository.save(budgetRequest);
         return BudgetRequestMapper.toResponseDTO(budgetRequest);
     }
 }

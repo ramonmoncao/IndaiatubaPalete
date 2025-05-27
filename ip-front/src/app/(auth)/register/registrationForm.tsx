@@ -25,7 +25,7 @@ export default function RegisterForm() {
             method: "POST",
             body: JSON.stringify(form),
         });
-        alert("Usuário registrado com sucesso!");
+        alert("Registado com sucesso!");
         router.push("/login");
         } catch (error) {
             console.log(error);

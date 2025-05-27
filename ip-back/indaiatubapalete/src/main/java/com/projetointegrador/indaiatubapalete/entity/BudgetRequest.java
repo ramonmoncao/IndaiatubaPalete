@@ -22,6 +22,7 @@ public class BudgetRequest {
     @JoinColumn(name = "budget_id")
     private List<SubTotal> subTotal;
 
+    @Enumerated(EnumType.STRING)
     private BudgetRequestStatus status;
 
     /**

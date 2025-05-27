@@ -41,7 +41,7 @@ export default function LoginForm() {
             if (redirectTo) {
                 targetPath = redirectTo;
             } else if (userType === "ADMIN") {
-                targetPath = "/products";
+                targetPath = "/admin";
             } else if (userType === "CLIENT") {
                 targetPath = `/budget/`;
             }
@@ -52,7 +52,7 @@ export default function LoginForm() {
             if (error === 401) {
                 setError("Credenciais incorretas");
             } else if (error === 404) {
-                setError("Serviço não encontrado");
+                setError("Usuário não cadastrado");
             } else {
                 setError("Erro ao fazer login");
             }

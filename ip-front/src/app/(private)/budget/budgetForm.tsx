@@ -27,6 +27,11 @@ export default function BudgetForm() {
     const [isLoading, setIsLoading] = useState(true);
     const [Id, setId] = useState<string | null>(null);
 
+    const productTypeLabels: Record<string, string> = {
+        PALLET_MADEIRA: "Madeira",
+        PALLET_PLASTICO: "Plástico",
+        CHAPATEX: "ChapaTex"
+    };
     useEffect(() => {
         const token = decodeURIComponent(document.cookie
             .split("; ")
@@ -139,7 +144,7 @@ export default function BudgetForm() {
                                     <option value="">Selecione um produto</option>
                                     {products.map((product) => (
                                         <option key={product.id} value={product.id}>
-                                            {product.type}-{product.name}-{product.description}
+                                            {productTypeLabels[product.type] || product.type} - {product.name} - {product.description}
                                         </option>
                                     ))}
                                 </select>
@@ -177,7 +182,9 @@ export default function BudgetForm() {
                                     {productList.map((item) => (
                                         <tr key={item.productId}>
                                             <td>{item.productDetails?.name || "Produto não encontrado"}</td>
-                                            <td>{item.productDetails?.type || "-"}</td>
+                                            <td>{productTypeLabels[item.productDetails?.type ?? ""]
+                                                || item.productDetails?.type || "-"}</td>
+
                                             <td>{item.quantity}</td>
                                             <td>
                                                 <button
