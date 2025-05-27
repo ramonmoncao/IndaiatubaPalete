@@ -1,0 +1,52 @@
+#budget{
+    background-color: var(--color-primary-1);
+}
+#budget-div {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - var(--footer-height, 0px));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(rgba(59, 123, 227, 0.9), rgba(59, 123, 227, 0.9)), url('../../../../public/background.jpg');
+    box-shadow: inset 0 0 50px 50px var(--color-primary-3);
+    background-size: cover;
+    padding: 20px 0; 
+    border-radius: 0 0 200px 0;
+    border-radius: 0 0 100% 0;
+}
+.budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.budget-table th, .budget-table td {
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.clickable-row {
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.clickable-row:hover {
+    background-color: #eee;
+}
+
+.details-row td {
+    background-color: #fafafa;
+    padding: 1rem;
+}
+
+.respond-btn {
+    margin-top: 0.5rem;
+    background: var(--color-primary-3);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+}

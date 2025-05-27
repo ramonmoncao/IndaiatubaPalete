@@ -47,4 +47,8 @@ public class BudgetRequestController {
             return ResponseEntity.notFound().build();
         }
     }
+    @PostMapping("/resolve/{id}")
+    public ResponseEntity<BudgetResponseDTO>resolveBudget(@PathVariable Long id){
+        return  ResponseEntity.ok(budgetRequestService.resolveBudget(id));
+    }
 }
