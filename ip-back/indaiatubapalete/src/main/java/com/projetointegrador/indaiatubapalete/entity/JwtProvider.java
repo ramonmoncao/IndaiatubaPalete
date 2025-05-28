@@ -43,9 +43,8 @@ public class JwtProvider {
                 .orElseThrow(()-> new ResponseStatusException
                         (HttpStatus.NOT_FOUND,"Email não cadastrado"));
         return Jwts.builder()
-                .setSubject(email)
+                .setSubject(user.getId().toString())
                 .claim("UserType", user.getUserType())
-                .claim("Id",user.getId())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(SignatureAlgorithm.HS512, SECRET)
