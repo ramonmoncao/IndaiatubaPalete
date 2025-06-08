@@ -20,6 +20,21 @@ Este repositório é dividido em duas partes:
 
 ---
 
+## 🚀 Novidades
+
+- Criação de **API REST pública** para integração com outros sistemas.
+- **Permissões por função**: diferenciação entre usuários comuns e administradores.
+- Interface totalmente **responsiva**, adaptada para smartphones e tablets.
+
+---
+
+## 🐞 Correções / Ajustes
+
+- **Segurança aprimorada** nas rotas da API (autorização, validação e proteção contra ataques comuns).
+- Ajustes visuais para melhor legibilidade e usabilidade em dispositivos móveis.
+
+---
+
 ## 📦 Funcionalidades da API (`ip-back`)
 
 - **Cadastro de Usuário:** Criação de contas com validação de dados.
