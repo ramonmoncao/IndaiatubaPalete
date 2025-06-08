@@ -1,55 +1,62 @@
-# Indaiatuba Palete
+# Indaiatuba Palete — Versão 1.0 (Release/v1)
 
-Bem-vindo ao repositório do **Indaiatuba Palete**, um sistema completo para gerenciamento de produtos, orçamentos e autenticação de usuários, desenvolvido para atender às necessidades de transporte e armazenamento seguro de mercadorias.
+Bem-vindo ao repositório do **Indaiatuba Palete**, um sistema web desenvolvido como parte de um projeto acadêmico, voltado ao gerenciamento de produtos e orçamentos.
 
-## 📋 Descrição do Projeto
+## 📋 Descrição Geral
 
-O **Indaiatuba Palete** é um sistema web que oferece:
-- **Frontend**: Interface de usuário moderna e responsiva, desenvolvida com **Next.js** e **TailwindCSS**.
-- **Backend**: API RESTful robusta, construída com **Spring Boot**, para gerenciar usuários, produtos e solicitações de orçamento.
-- **Autenticação JWT**: Segurança implementada com autenticação baseada em tokens JWT.
-- **Banco de Dados**: Persistência de dados utilizando **H2 Database** (em memória).
+**Indaiatuba Palete v1.0** marca o início do projeto com uma estrutura básica funcional, incluindo uma interface simples, funcionalidades essenciais e integração frontend-backend inicial.
 
-## 🚀 Funcionalidades
+### 🔹 Principais Tecnologias
 
-### Frontend
-- Página inicial com informações sobre a empresa e seus produtos.
-- Sistema de login e registro de usuários.
-- Formulário para solicitação de orçamento.
-- Navegação responsiva e design moderno.
+#### Frontend
+- Next.js
+- TailwindCSS
+- TypeScript
 
-### Backend
-- Gerenciamento de usuários (CRUD).
-- Gerenciamento de produtos (CRUD).
-- Criação e consulta de solicitações de orçamento.
-- Autenticação e autorização com JWT.
+#### Backend
+- Spring Boot
+- JWT para autenticação
+- Banco de dados H2 (memória)
+- Maven
 
-## 🛠️ Tecnologias Utilizadas
+---
+
+## 🚀 Funcionalidades Implementadas
 
 ### Frontend
-- **Next.js**: Framework React para renderização do lado do servidor.
-- **TailwindCSS**: Framework CSS para estilização.
-- **TypeScript**: Superset do JavaScript para tipagem estática.
+- Página inicial com descrição da empresa e seus serviços
+- Formulário de solicitação de orçamento
+- Tela de login e registro
+- Interface responsiva e estilização com Tailwind
 
 ### Backend
-- **Spring Boot**: Framework Java para desenvolvimento de APIs RESTful.
-- **JWT (JSON Web Token)**: Para autenticação e autorização.
-- **H2 Database**: Banco de dados em memória para desenvolvimento e testes.
-- **Maven**: Gerenciador de dependências.
+- CRUD de usuários
+- CRUD de produtos
+- Solicitação de orçamento via API
+- Autenticação JWT
+- Banco de dados em memória (H2)
 
-📊 Status da Versão
-- **Versão Atual: 0.1.0**  
-* Frontend:  
-  * Funcionalidades básicas implementadas, incluindo login, registro, e formulário de orçamento.  
-  * Navegação responsiva e design moderno.  
-  * Integração com o backend para autenticação e gerenciamento de produtos.  
-* Backend: 
-  - Endpoints para gerenciamento de usuários, produtos e orçamentos implementados.  
-  - Autenticação JWT funcional.  
-  - Banco de dados H2 configurado para persistência em memória.  
-  - Configuração de CORS para integração com o frontend.  
+---
 
-📝 Observações:  
-Este projeto está em fase inicial de desenvolvimento e ainda pode conter bugs ou funcionalidades incompletas.  
-O backend utiliza um banco de dados em memória (H2) para facilitar o desenvolvimento e testes. Em produção, recomenda-se configurar um banco de dados persistente, como MySQL ou PostgreSQL.
-A autenticação JWT está implementada, mas a renovação de tokens e logout ainda não foram adicionados.
+## 🐞 Bugs Corrigidos / Melhorias nesta Versão
+
+- Validação de campos no frontend
+- Estilização base com TailwindCSS
+- Integração inicial com o backend
+- Configuração de CORS para acesso cruzado
+
+---
+
+## 📌 Observações
+
+- Esta é uma **versão inicial** (protótipo).
+- A autenticação JWT foi implementada, mas **funcionalidades como logout e renovação de token ainda estão pendentes**.
+- O banco de dados H2 é usado para facilitar o desenvolvimento. 
+
+---
+
+## 🏁 Próximos Passos (para v2)
+- Melhorar segurança de autenticação
+- Introduzir controle de sessões
+
+
