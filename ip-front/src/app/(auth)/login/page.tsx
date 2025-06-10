@@ -32,7 +32,7 @@ export default function Login() {
                             </Suspense>
                             <div className="options">
                                 <p>novo por aqui? <Link className="link" href={"/register"}>registre-se</Link></p>
-                                <Link className="link" href={"/password/recovery"}><p>esqueci minha senha.</p></Link>
+                                
                             </div>
                         </div>
                     </div>
