@@ -50,3 +50,11 @@
 .sendbtnadm:hover{
   background-color: var(--color-primary-5);
 }
+
+@media (max-width: 800px) {
+   .boxadm {
+    width: 90%;
+    justify-content: center;
+    font-size: 13px;
+  }
+}
